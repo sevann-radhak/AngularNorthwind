@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "AngularNorthwind": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularNorthwind"
+    }
+  },
+  "defaultProject": "AngularNorthwind",
+  "cli": {
+    "analytics": "6306e866-4a21-4f4d-aa85-06abc2c3a73d"
+  }
 }
