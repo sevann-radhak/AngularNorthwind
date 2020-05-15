@@ -1,1 +1,21 @@
-<p>product-main-container works!</p>
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/product/list']" [routerLinkActive]="['active']">List</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/product/new']" [routerLinkActive]="['active']">New</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/product/most-sellings']" [routerLinkActive]="['active']">Most sellings</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

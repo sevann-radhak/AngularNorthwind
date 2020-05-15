@@ -12,6 +12,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { metaReducers } from '../../state/reducers/index';
 import { ProductModule } from './product/product.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { ProductModule } from './product/product.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
     SharedModule,
     HomeModule,
-    ProductModule
+    ProductModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
