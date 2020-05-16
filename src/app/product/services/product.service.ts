@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   getProducts(request: GetProduct): Observable<ProductList> {
-    return this.httpClient.post<ProductList>(`${environment.ApiUrl}product/paginated`, request);
+    return this.httpClient.post<ProductList>(`${environment.ApiUrl}products/paginated`, request);
   }
 
 }
