@@ -38,4 +38,8 @@ export class ProductListContainerComponent implements OnInit {
     this.store.dispatch(new productActions.LoadProducts(this.request));
   }
 
+  onEdit(productId: number) {
+    console.log(productId);
+  }
+
 }
