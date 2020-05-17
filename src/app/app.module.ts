@@ -14,6 +14,7 @@ import { metaReducers } from '../../state/reducers/index';
 import { ProductModule } from './product/product.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+// import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,14 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({}, {metaReducers}),
+    StoreModule.forRoot({}, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
     SharedModule,
     HomeModule,
     ProductModule,
     BrowserAnimationsModule
+    // ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

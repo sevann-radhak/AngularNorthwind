@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material/material.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -11,8 +12,10 @@ import { MaterialModule } from './material/material.module';
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
     MaterialModule
   ],
-  exports: [NavBarComponent, MaterialModule]
+  exports: [NavBarComponent, FormsModule, ReactiveFormsModule, MaterialModule]
 })
 export class SharedModule { }
