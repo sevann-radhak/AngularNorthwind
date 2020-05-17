@@ -10,9 +10,11 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './state/reducers/index';
 import { ProductEffects } from './state/effects/product.effects';
+import { ProductTableListComponent } from './components/product-table-list/product-table-list.component';
+import { ProductCardListComponent } from './components/product-card-list/product-card-list.component';
 
 @NgModule({
-  declarations: [ProductMainContainerComponent, ProductListContainerComponent],
+  declarations: [ProductMainContainerComponent, ProductListContainerComponent, ProductTableListComponent, ProductCardListComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

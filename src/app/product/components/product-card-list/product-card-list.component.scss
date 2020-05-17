@@ -1,0 +1,29 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+.cards {
+    display: flex;
+    width: 14em;
+    margin-left: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.card-child-container {
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-name {
+    width: 12em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

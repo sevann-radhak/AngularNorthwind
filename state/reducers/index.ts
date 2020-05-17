@@ -7,8 +7,8 @@ export const reducers: ActionReducerMap<State> = { };
 
 export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
     return (state: State, action: any): State => {
-        console.log('state: ', state);
-        console.log('action: ', action);
+        // console.log('state: ', state);
+        // console.log('action: ', action);
 
         return reducer(state, action);
     };
