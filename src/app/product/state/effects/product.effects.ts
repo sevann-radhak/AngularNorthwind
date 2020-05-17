@@ -15,4 +15,12 @@ export class ProductEffects {
             .pipe(map(data => new productActions.LoadProductsComplete(data)))
         )
     );
+
+    @Effect()
+    getProductById$ = this.actions$.pipe(
+        ofType<productActions.GetProductById>(productActions.ProductActionTypes.GetProductById),
+        switchMap(action => this.productService.getProductById(action.productId)
+            .pipe(map(data => new productActions.GetProductByIdComplete(data)))
+        )
+    );
 }
