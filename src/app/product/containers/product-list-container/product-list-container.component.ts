@@ -18,8 +18,8 @@ export class ProductListContainerComponent implements OnInit {
   products$: Observable<Product[]> = this.store.select(fromProductReducer.getProducts);
   totalRecords$: Observable<number> = this.store.select(fromProductReducer.getTotalRecords);
 
-  pageSize = 10;
-  pageSizeOptions: number[] = [10, 20, 30, 50];
+  pageSize = 5;
+  pageSizeOptions: number[] = [5, 10, 25, 50];
   request: GetProduct;
 
   ngOnInit(): void {
