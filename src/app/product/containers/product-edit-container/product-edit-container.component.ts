@@ -19,13 +19,19 @@ export class ProductEditContainerComponent implements OnInit {
 
   product$: Observable<Product> = this.store.select(fromReducer.getProduct);
 
-  constructor(@Inject(MAT_DIALOG_DATA) private data: ProductEditData,
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private data: ProductEditData,
     private dialogRef: MatDialogRef<ProductEditContainerComponent>,
     private store: Store<fromReducer.ProductState>) {
     this.store.dispatch(new productActions.GetProductById(data.productId));
   }
 
   ngOnInit(): void {
+  }
+
+  onEdit(product: Product) {
+    this.store.dispatch(new productActions.UpdateProduct(product));
+    this.dialogRef.close();
   }
 
 }

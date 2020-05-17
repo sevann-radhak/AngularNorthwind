@@ -30,7 +30,6 @@ export class ProductListContainerComponent implements OnInit {
   }
 
   changePage(event: any): void {
-    console.log(event);
     this.offset = event.pageIndex * event.pageSize;
     this.pageSize = event.pageSize;
     this.refreshData(event.pageSize, this.offset);
@@ -48,7 +47,7 @@ export class ProductListContainerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.refreshData(this.pageSize, this.offset)
+      this.refreshData(this.pageSize, this.offset);
     });
   }
 }

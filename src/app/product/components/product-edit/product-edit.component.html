@@ -2,6 +2,57 @@
     <div>Edit Product</div>
 
     <div>
-        <form [formGroup]="productEditForm" (ngSubmit)="onEdit()"></form>
+        <form [formGroup]="productEditForm" (ngSubmit)="onEdit()">
+            <div class="product-code-container">
+                <mat-form-field>
+                    <input matInput type="text" formControlName="productCode" placeholder="Code" />
+                </mat-form-field>
+                <mat-error class="x-small-letter" *ngIf="productEditForm.get('productCode').touched && productEditForm.get('productCode').hasError('required')">The code field is mandatory</mat-error>
+            </div>
+
+            <div class="product-name-container mt-2">
+                <mat-form-field>
+                    <input matInput type="text" formControlName="productName" placeholder="Product" />
+                </mat-form-field>
+                <mat-error class="x-small-letter" *ngIf="productEditForm.get('productName').touched && productEditForm.get('productName').hasError('required')">The product field is mandatory</mat-error>
+            </div>
+
+            <div class="product-description-container mt-2">
+                <mat-form-field>
+                    <input matInput type="text" formControlName="description" placeholder="Description" />
+                </mat-form-field>
+            </div>
+
+            <div class="product-standar-cost-container mt-2">
+                <mat-form-field>
+                    <input matInput type="number" formControlName="standardCost" placeholder="Standard cost" />
+                </mat-form-field>
+                <mat-error class="x-small-letter" *ngIf="productEditForm.get('standardCost').touched && productEditForm.get('standardCost').hasError('required')">The standard cost field is mandatory</mat-error>
+            </div>
+
+            <div class="product-list-price-container mt-2">
+                <mat-form-field>
+                    <input matInput type="number" formControlName="listPrice" placeholder="List price" />
+                </mat-form-field>
+                <mat-error class="x-small-letter" *ngIf="productEditForm.get('listPrice').touched && productEditForm.get('listPrice').hasError('required')">The list price cost field is mandatory</mat-error>
+            </div>
+
+            <div class="product-category-container mt-2">
+                <mat-form-field>
+                    <mat-label>Select a Category</mat-label>
+                    <mat-select formControlName="category">
+                        <mat-option *ngFor="let category of categories" [value]="category.key">{{category.value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-error class="x-small-letter" *ngIf="productEditForm.get('category').touched && productEditForm.get('category').hasError('required')">The category field is mandatory</mat-error>
+            </div>
+
+            <div class="mt-4">
+                <div class="button-container">
+                    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!productEditForm.valid">Save</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

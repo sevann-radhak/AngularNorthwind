@@ -34,6 +34,15 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
                 totalRecords: action.payload.totalRecords
             };
 
+        case ProductActions.ProductActionTypes.UpdateProduct:
+            return state;
+
+        case ProductActions.ProductActionTypes.UpdateProductComplete:
+            return {
+                ...state,
+                product: action.payload
+            };
+
         default:
             return state;
     }
@@ -42,3 +51,4 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
 export const getProduct = (state: State) => state.product;
 export const getProducts = (state: State) => state.products;
 export const getTotalRecords = (state: State) => state.totalRecords;
+export const updateProduct = (state: State) => state.product;
