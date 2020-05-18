@@ -14,6 +14,10 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
+  deleteProduct(request: number): Observable<Product> {
+    return this.httpClient.delete<Product>(`${environment.ApiUrl}products/${request}`);
+  }
+
   getProductById(request: number): Observable<Product> {
     return this.httpClient.get<Product>(`${environment.ApiUrl}products/${request}`);
   }

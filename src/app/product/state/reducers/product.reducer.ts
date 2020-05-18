@@ -15,9 +15,16 @@ const initialState: State = {
 
 export function ProductReducer(state = initialState, action: ProductActions.Actions) {
     switch (action.type) {
+        case ProductActions.ProductActionTypes.DeleteProductById:
+            return state;
+        case ProductActions.ProductActionTypes.DeleteProductByIdComplete:
+            return {
+                ...state,
+                product: action.payload
+            };
+
         case ProductActions.ProductActionTypes.GetProductById:
             return state;
-
         case ProductActions.ProductActionTypes.GetProductByIdComplete:
             return {
                 ...state,
@@ -26,7 +33,6 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
 
         case ProductActions.ProductActionTypes.LoadProducts:
             return state;
-
         case ProductActions.ProductActionTypes.LoadProductsComplete:
             return {
                 ...state,
@@ -36,7 +42,6 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
 
         case ProductActions.ProductActionTypes.UpdateProduct:
             return state;
-
         case ProductActions.ProductActionTypes.UpdateProductComplete:
             return {
                 ...state,
@@ -48,6 +53,7 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
     }
 }
 
+export const deleteProduct = (state: State) => state.product;
 export const getProduct = (state: State) => state.product;
 export const getProducts = (state: State) => state.products;
 export const getTotalRecords = (state: State) => state.totalRecords;

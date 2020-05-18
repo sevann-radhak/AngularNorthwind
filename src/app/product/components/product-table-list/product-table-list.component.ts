@@ -13,10 +13,16 @@ export class ProductTableListComponent implements OnInit {
 
   @Output()
   edit: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  delete: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(productId: number) {
+    this.delete.emit(productId);
   }
 
   onEdit(productId: number) {

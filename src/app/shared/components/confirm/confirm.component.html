@@ -1,0 +1,15 @@
+<div>
+    <span mat-dialog-title class="">{{data.title}}</span>
+    <mat-divider></mat-divider>
+
+    <mat-dialog-content>
+        <div>
+            <div>{{data.message}}</div>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="center">
+        <button type="button" mat-raised-button *ngIf="data.showCancel" (click)="dialogRef.close(false)">Cancel</button>
+        <button type="button" mat-raised-button color="primary" (click)="dialogRef.close(true)">Accept</button>
+    </mat-dialog-actions>
+</div>

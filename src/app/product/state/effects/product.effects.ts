@@ -13,6 +13,17 @@ export class ProductEffects {
         private router: Router) { }
 
     @Effect()
+    deleteProduct$ = this.actions$.pipe(
+        ofType<productActions.DeleteProductById>(productActions.ProductActionTypes.DeleteProductById),
+        switchMap(action => this.productService.deleteProduct(action.request)
+            .pipe(map(data => {
+                // this.router.navigate(['/product/list']);
+                return new productActions.DeleteProductByIdComplete(data);
+            }))
+        )
+    );
+
+    @Effect()
     getProducts$ = this.actions$.pipe(
         ofType<productActions.LoadProducts>(productActions.ProductActionTypes.LoadProducts),
         switchMap(action => this.productService.getProducts(action.request)
