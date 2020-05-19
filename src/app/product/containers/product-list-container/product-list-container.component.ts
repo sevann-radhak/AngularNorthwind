@@ -68,7 +68,6 @@ export class ProductListContainerComponent implements OnInit {
     );
     this.confirm.confirm(confirmData).subscribe(result => {
       if (result) {
-        // TODO: prove this functionality when adding a new product (without associated orders)
         this.store.dispatch(new productActions.DeleteProductById(productId));
       }
     });
@@ -76,7 +75,7 @@ export class ProductListContainerComponent implements OnInit {
 
   onEdit(productId: number) {
     const dialogRef = this.dialog.open(ProductEditContainerComponent, {
-      width: '250px',
+      width: '100%x',
       data: { productId }
     });
 

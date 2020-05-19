@@ -1,0 +1,66 @@
+<div class="new-product-container">
+    <div>
+        <span class="modal-title">{{title}}</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="controls">
+                <div class="product-code-container mt-4">
+                    <mat-form-field class="product-code">
+                        <input matInput placeholder="Product Code" formControlName="productCode" />
+                        <mat-error class="x-small-letter" *ngIf="productForm.get('productCode').touched && productForm.get('productCode').hasError('required')">The Product Code field is mandatory</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="product-name-container mt-4">
+                    <mat-form-field class="product-name">
+                        <input matInput placeholder="Product" formControlName="productName" />
+                        <mat-error class="x-small-letter" *ngIf="productForm.get('productName').touched && productForm.get('productName').hasError('required')">The Product field is mandatory</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="description-container mt-4">
+                    <mat-form-field class="description">
+                        <input matInput placeholder="Description" formControlName="description" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="standar-cost-container mt-4">
+                    <mat-form-field class="standar-cost">
+                        <input appDecimalOnly type="number" step="0.01" matInput placeholder="Standar cost" formControlName="standardCost" />
+                        <mat-error class="x-small-letter" *ngIf="productForm.get('standardCost').touched && productForm.get('standardCost').hasError('required')">The Standard cost field is mandatory</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="list-price-container mt-4">
+                    <mat-form-field class="list-price">
+                        <input appDecimalOnly type="number" step="0.01" matInput placeholder="List price" formControlName="listPrice" />
+                        <mat-error class="x-small-letter" *ngIf="productForm.get('listPrice').touched && productForm.get('listPrice').hasError('required')">The List price field is mandatory</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="category-container mt-4">
+                    <mat-form-field class="category">
+                        <mat-label>Select a Category</mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option *ngFor="let category of categories" [value]="category.key">{{category.value}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error class="x-small-letter" *ngIf="productForm.get('category').touched && productForm.get('category').hasError('required')">The category field is mandatory</mat-error>
+                </div>
+            </div>
+
+            <div>
+                <div class="button-container">
+                    <button mat-raised-button color="warn" class="expand" mat-dialog-close>Cancel</button>
+                    <button mat-raised-button color="primary" class="expand" type="submit" [disabled]="!productForm.valid">{{submitButtonText}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
