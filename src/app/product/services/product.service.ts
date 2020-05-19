@@ -14,6 +14,10 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
+  addProduct(request: Product): Observable<Product> {
+    return this.httpClient.post<Product>(`${environment.ApiUrl}products`, request);
+  }
+
   deleteProduct(request: number): Observable<Product> {
     return this.httpClient.delete<Product>(`${environment.ApiUrl}products/${request}`);
   }
@@ -25,11 +29,6 @@ export class ProductService {
   getProducts(request: GetProduct): Observable<ProductList> {
     return this.httpClient.post<ProductList>(`${environment.ApiUrl}products/paginated`, request);
   }
-
-  // updateProduct(request: Product): Observable<Response> {
-  //   return this.httpClient.put(`${environment.ApiUrl}products`, request)
-  //     .pipe(map((response: Response) => response));
-  // }
 
   updateProduct(request: Product): Observable<Product> {
     return this.httpClient.put<Product>(`${environment.ApiUrl}products`, request);

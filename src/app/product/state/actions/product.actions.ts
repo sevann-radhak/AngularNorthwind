@@ -4,14 +4,28 @@ import { ProductList } from '../../models/product-list';
 import { Product } from '../../models/product';
 
 export enum ProductActionTypes {
+    AddProduct = '{Product} Add Product',
+    AddProductComplete = '{Product} Add Product complete',
     DeleteProductById = '{Product} Delete Product by Id',
-    DeleteProductByIdComplete = '{Product} Get Delete by Id complete',
+    DeleteProductByIdComplete = '{Product} Delete Product by Id complete',
     GetProductById = '{Product} Get Product by Id',
     GetProductByIdComplete = '{Product} Get Product by Id complete',
     LoadProducts = '{Product} Load Products',
     LoadProductsComplete = '{Product} Load Products complete',
     UpdateProduct = '{Product} Update Product',
     UpdateProductComplete = '{Product} Update Product complete'
+}
+
+export class AddProduct implements Action {
+    readonly type = ProductActionTypes.AddProduct;
+
+    constructor(public request: Product) { }
+}
+
+export class AddProductComplete implements Action {
+    readonly type = ProductActionTypes.AddProductComplete;
+
+    constructor(public payload: Product) { }
 }
 
 export class DeleteProductById implements Action {
@@ -63,7 +77,9 @@ export class UpdateProductComplete implements Action {
 }
 
 export type Actions =
-    DeleteProductById
+    AddProduct
+    | AddProductComplete
+    | DeleteProductById
     | DeleteProductByIdComplete
     | GetProductById
     | GetProductByIdComplete

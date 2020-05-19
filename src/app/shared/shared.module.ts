@@ -6,9 +6,10 @@ import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ConfirmService } from './services/confirm.service';
+import { DecimalOnlyDirective } from './directives/decimal-only.directive';
 
 @NgModule({
-  declarations: [ConfirmComponent, NavBarComponent],
+  declarations: [ConfirmComponent, DecimalOnlyDirective, NavBarComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,6 +19,7 @@ import { ConfirmService } from './services/confirm.service';
   ],
   exports: [
     ConfirmComponent,
+    DecimalOnlyDirective,
     FormsModule,
     MaterialModule,
     NavBarComponent,

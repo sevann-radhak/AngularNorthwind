@@ -14,6 +14,7 @@ import { ProductTableListComponent } from './components/product-table-list/produ
 import { ProductCardListComponent } from './components/product-card-list/product-card-list.component';
 import { ProductEditContainerComponent } from './containers/product-edit-container/product-edit-container.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductNewContainerComponent } from './containers/product-new-container/product-new-container.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductTableListComponent,
     ProductCardListComponent,
     ProductEditContainerComponent,
-    ProductEditComponent],
+    ProductEditComponent,
+    ProductNewContainerComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

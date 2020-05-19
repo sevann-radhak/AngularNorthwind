@@ -62,13 +62,6 @@ export class ProductEditComponent implements OnInit, OnChanges {
   }
 
   onEdit(): void {
-    // if (this.productEditForm.valid) {
-    //   if (this.productEditForm.dirty) {
-    //     this.edit.emit({...this.product, ...this.productEditForm.value});
-    //   }
-    // }
-
-
     if (this.productEditForm.valid && this.productEditForm.dirty) {
       this.edit.emit({ ...this.product, ...this.productEditForm.value });
     }
