@@ -16,6 +16,8 @@ import { ProductEditContainerComponent } from './containers/product-edit-contain
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductNewContainerComponent } from './containers/product-new-container/product-new-container.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { BestSellersProductContainerComponent } from './containers/best-sellers-product-container/best-sellers-product-container.component';
+import { BestSellerProductChartComponent } from './components/best-seller-product-chart/best-seller-product-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ProductEditContainerComponent,
     ProductEditComponent,
     ProductNewContainerComponent,
-    ProductFormComponent],
+    ProductFormComponent,
+    BestSellersProductContainerComponent,
+    BestSellerProductChartComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

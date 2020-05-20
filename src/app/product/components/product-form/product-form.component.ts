@@ -16,7 +16,6 @@ export class ProductFormComponent implements OnInit, OnChanges {
   submitButtonText: string;
   title: string;
 
-
   @Input()
   productEdit: Product;
   @Output()

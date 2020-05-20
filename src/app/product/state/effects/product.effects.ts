@@ -35,6 +35,17 @@ export class ProductEffects {
     );
 
     @Effect()
+    getBestSellers$ = this.actions$.pipe(
+        ofType<productActions.GetBestSellers>(productActions.ProductActionTypes.GetBestSellers),
+        switchMap(action => this.productService.getBestSellers()
+            .pipe(map(data => {
+                // this.router.navigate(['/product/list']);
+                return new productActions.GetBestSellersComplete(data);
+            }))
+        )
+    );
+
+    @Effect()
     getProducts$ = this.actions$.pipe(
         ofType<productActions.LoadProducts>(productActions.ProductActionTypes.LoadProducts),
         switchMap(action => this.productService.getProducts(action.request)

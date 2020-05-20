@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductMainContainerComponent } from './containers/product-main-container/product-main-container.component';
 import { ProductListContainerComponent } from './containers/product-list-container/product-list-container.component';
 import { ProductNewContainerComponent } from './containers/product-new-container/product-new-container.component';
+import { ProductNewGuard } from './guards/product-new.guard';
+import { BestSellersProductContainerComponent } from './containers/best-sellers-product-container/best-sellers-product-container.component';
 
 
 const routes: Routes = [
@@ -11,8 +13,9 @@ const routes: Routes = [
     component: ProductMainContainerComponent,
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: 'best-sellers', component: BestSellersProductContainerComponent },
       { path: 'list', component: ProductListContainerComponent },
-      { path: 'new', component: ProductNewContainerComponent }
+      { path: 'new', component: ProductNewContainerComponent, canDeactivate: [ProductNewGuard] }
     ]
   }
 

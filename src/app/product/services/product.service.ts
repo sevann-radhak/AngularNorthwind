@@ -5,7 +5,8 @@ import { ProductList } from '../models/product-list';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product';
-// import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { ProductBestSeller } from '../models/best-sellers';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,21 @@ export class ProductService {
 
   deleteProduct(request: number): Observable<Product> {
     return this.httpClient.delete<Product>(`${environment.ApiUrl}products/${request}`);
+  }
+
+  // getBestSellers(): Observable<ProductBestSeller[]> {
+  //   return this.httpClient.get<ProductBestSeller[]>(`${environment.ApiUrl}products/bestselling`);
+  // }
+
+  getBestSellers(): Observable<ProductBestSeller[]> {
+    return this.httpClient.get(`${environment.ApiUrl}products/bestselling`)
+      .pipe(
+        map((response: any) => {
+          return response.data.map((product: any) => {
+            return ProductBestSeller.mapFromResponse(product, response.totalSellings);
+          })
+        })
+      );
   }
 
   getProductById(request: number): Observable<Product> {
