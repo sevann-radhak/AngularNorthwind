@@ -19,10 +19,10 @@
                 <td>{{item.listPrice}}</td>
                 <td>{{item.standardCost}}</td>
                 <td>
-                    <button mat-icon-button color="primary" aria-label="Edit" (click)="onEdit(item.id)">
+                    <button mat-icon-button color="primary" matTooltip="Edit" aria-label="Edit" (click)="onEdit(item.id)">
                     <mat-icon>edit</mat-icon>
                   </button>
-                    <button mat-icon-button color="warn" aria-label="Delete" (click)="onDelete(item.id)">
+                    <button mat-icon-button color="warn" matTooltip="Delete" aria-label="Delete" (click)="onDelete(item.id)">
                     <mat-icon>delete</mat-icon>
                   </button>
                 </td>

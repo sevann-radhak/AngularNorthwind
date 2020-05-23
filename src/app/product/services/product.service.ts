@@ -33,7 +33,7 @@ export class ProductService {
         map((response: any) => {
           return response.data.map((product: any) => {
             return ProductBestSeller.mapFromResponse(product, response.totalSellings);
-          })
+          });
         })
       );
   }

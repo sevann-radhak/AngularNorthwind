@@ -39,7 +39,7 @@ export class ProductListContainerComponent implements OnInit {
   request: GetProduct;
 
   ngOnInit(): void {
-    this.refreshData(this.pageSizeOptions[0], 0);
+    this.refreshData(this.pageSizeOptions[0], this.offset);
   }
 
   triggers(): void {

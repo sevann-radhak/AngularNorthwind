@@ -16,7 +16,7 @@ const initialState: State = {
     totalRecords: 0
 };
 
-export function ProductReducer(state = initialState, action: ProductActions.Actions) {
+export function ProductReducer(state = initialState, action: ProductActions.Actions): State {
     switch (action.type) {
         case ProductActions.ProductActionTypes.AddProduct:
             return state;

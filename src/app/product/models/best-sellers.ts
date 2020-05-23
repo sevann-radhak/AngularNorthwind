@@ -7,8 +7,6 @@ export class ProductBestSeller {
     }
 
     static mapFromResponse(data: any, totalSelling: number) {
-        console.log(data);
-        
         return new ProductBestSeller(
             data.id,
             data.productName,

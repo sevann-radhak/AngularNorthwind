@@ -10,21 +10,5 @@ export class Product {
     /**
      *
      */
-    constructor(
-        //   category: string,
-        //   description: string,
-        //   id: number,
-        //   listPrice: number,
-        //   prouctCode: string,
-        //   ProductName: string,
-        //   standartConst: number
-    ) {
-        //   this.Category = category;
-        //   this.Description = description;
-        //   this.Id = id;
-        //   this.ListPrice = listPrice;
-        //   this.ProductCode = prouctCode;
-        //   this.ProductName = ProductName;
-        //   this.StandardCost = standartConst;
-    }
+    constructor( ) { }
 }

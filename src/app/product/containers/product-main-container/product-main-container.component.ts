@@ -1,8 +1,4 @@
-
-
 import { Component, OnInit } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-product-main-container',

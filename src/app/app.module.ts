@@ -11,10 +11,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { metaReducers } from '../../state/reducers/index';
-import { ProductModule } from './product/product.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-// import { ReactiveFormsModule } from '@angular/forms';
+import { ProductModule } from './product/product.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
@@ -23,15 +23,15 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    EmployeeModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
+    ProductModule,
     SharedModule,
     HomeModule,
-    ProductModule,
     BrowserAnimationsModule
-    // ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
