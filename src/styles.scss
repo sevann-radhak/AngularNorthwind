@@ -15,10 +15,18 @@ body {
 }
 
 .employee-modal-dialog {
-    width: 50%;
+    width: 100%;
     // height: 80%;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.add-button-container {
+    flex: 1;
+    .add-button {
+        margin-bottom: 0.5em;
+        float: right;
+    }
 }

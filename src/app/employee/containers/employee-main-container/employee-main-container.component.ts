@@ -10,6 +10,8 @@ import { ofType } from '@ngrx/effects';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeDetailContainerComponent } from '../employee-detail-container/employee-detail-container.component';
 import { EmployeeEditContainerComponent } from '../employee-edit-container/employee-edit-container.component';
+import { Constants } from '../../../constants/constans';
+import { EmployeeNewContainerComponent } from '../employee-new-container/employee-new-container.component';
 
 @Component({
   selector: 'app-employee-main-container',
@@ -18,7 +20,9 @@ import { EmployeeEditContainerComponent } from '../employee-edit-container/emplo
 })
 export class EmployeeMainContainerComponent implements OnInit {
 
+  addEmploye: string;
   request: GetEmployees;
+
   constructor(
     private actionsSubject$: ActionsSubject,
     private dialog: MatDialog,
@@ -33,6 +37,7 @@ export class EmployeeMainContainerComponent implements OnInit {
   pageSize = this.pageSizeOptions[0];
 
   ngOnInit(): void {
+    this.addEmploye = Constants.ADD_EMPLOYEE_TITLE;
     this.triggers();
     this.refreshData(this.pageSizeOptions[0], this.offset);
   }
@@ -52,6 +57,15 @@ export class EmployeeMainContainerComponent implements OnInit {
 
   onDelete($event) {
 
+  }
+
+  onAdd(): void {
+    const dialogRef = this.dialog.open(EmployeeNewContainerComponent,
+      {
+        panelClass: 'employee-modal-dialog'
+      }
+    );
+    dialogRef.afterClosed().subscribe(_ => this.refreshData(this.pageSize, this.offset));
   }
 
   onDetail(event: any): void {

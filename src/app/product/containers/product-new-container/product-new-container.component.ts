@@ -17,9 +17,7 @@ export class ProductNewContainerComponent implements DoCheck, OnInit, AfterViewI
 
   productForm: FormGroup;
 
-  constructor(
-    private store: Store<fromReducder.ProductState>) {
-  }
+  constructor(private store: Store<fromReducder.ProductState>) { }
 
   ngDoCheck(): void {
     if (this.child && this.child.productForm) {

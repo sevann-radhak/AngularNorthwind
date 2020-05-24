@@ -1,4 +1,7 @@
 <div>
+    <div class="add-button-container">
+        <button mat-raised-button color="primary" class="add-button" (click)="onAdd()">{{addEmploye}}</button>
+    </div>
     <div>
         <app-employee-list [employees]="employees$ | async" (edit)="onEdit($event)" (delete)="onDelete($event)" (detail)="onDetail($event)"></app-employee-list>
         <div>

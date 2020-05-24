@@ -6,7 +6,7 @@ export class Constants{
     public static SUBMIT_BUTTON_SAVE = 'Save';
 
     // Employee
-    public static ADD_EMPLOYEE_TITLE = 'Add Emmloyee';
+    public static ADD_EMPLOYEE_TITLE = 'Add Employee';
     public static ADDRESS = 'Address';
     public static ADDRESS_REQUIRED = 'The Address field is mandatory';
     public static COMPANY = 'Company';
