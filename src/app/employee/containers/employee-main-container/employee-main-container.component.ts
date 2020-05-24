@@ -12,6 +12,8 @@ import { EmployeeDetailContainerComponent } from '../employee-detail-container/e
 import { EmployeeEditContainerComponent } from '../employee-edit-container/employee-edit-container.component';
 import { Constants } from '../../../constants/constans';
 import { EmployeeNewContainerComponent } from '../employee-new-container/employee-new-container.component';
+import { ConfirmData } from '../../../shared/models/confirm-data';
+import { ConfirmService } from '../../../shared/services/confirm.service';
 
 @Component({
   selector: 'app-employee-main-container',
@@ -25,6 +27,7 @@ export class EmployeeMainContainerComponent implements OnInit {
 
   constructor(
     private actionsSubject$: ActionsSubject,
+    private confirm: ConfirmService,
     private dialog: MatDialog,
     private store: Store<fromEmployeeReducer.EmployeeState>) { }
 
@@ -55,8 +58,19 @@ export class EmployeeMainContainerComponent implements OnInit {
     this.refreshData(event.pageSize, this.offset);
   }
 
-  onDelete($event) {
+  onDelete(event: any) {
+    console.log(event);
 
+    const confirmData = new ConfirmData(
+      `${Constants.DELETE_EMPLOYEE_TITLE} - ${event.firstName} ${event.lastName}`,
+      Constants.DELETE_EMPLOYEE_MESSAGE,
+      true
+    );
+    this.confirm.confirm(confirmData).subscribe(result => {
+      if (result) {
+        this.store.dispatch(new EmployeeActions.DeleteEmployeeById(event.id));
+      }
+    });
   }
 
   onAdd(): void {

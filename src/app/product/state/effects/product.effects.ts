@@ -28,7 +28,6 @@ export class ProductEffects {
         ofType<productActions.DeleteProductById>(productActions.ProductActionTypes.DeleteProductById),
         switchMap(action => this.productService.deleteProduct(action.request)
             .pipe(map(data => {
-                // this.router.navigate(['/product/list']);
                 return new productActions.DeleteProductByIdComplete(data);
             }))
         )
@@ -39,7 +38,6 @@ export class ProductEffects {
         ofType<productActions.GetBestSellers>(productActions.ProductActionTypes.GetBestSellers),
         switchMap(action => this.productService.getBestSellers()
             .pipe(map(data => {
-                // this.router.navigate(['/product/list']);
                 return new productActions.GetBestSellersComplete(data);
             }))
         )

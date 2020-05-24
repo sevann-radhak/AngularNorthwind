@@ -62,7 +62,6 @@ export function ProductReducer(state = initialState, action: ProductActions.Acti
         case ProductActions.ProductActionTypes.UpdateProduct:
             return state;
         case ProductActions.ProductActionTypes.UpdateProductComplete:
-            console.log(action.payload);
             return {
                 ...state,
                 product: action.payload

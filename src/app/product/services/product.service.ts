@@ -23,10 +23,6 @@ export class ProductService {
     return this.httpClient.delete<Product>(`${environment.ApiUrl}products/${request}`);
   }
 
-  // getBestSellers(): Observable<ProductBestSeller[]> {
-  //   return this.httpClient.get<ProductBestSeller[]>(`${environment.ApiUrl}products/bestselling`);
-  // }
-
   getBestSellers(): Observable<ProductBestSeller[]> {
     return this.httpClient.get(`${environment.ApiUrl}products/bestselling`)
       .pipe(

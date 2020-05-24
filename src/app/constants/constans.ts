@@ -11,6 +11,8 @@ export class Constants{
     public static ADDRESS_REQUIRED = 'The Address field is mandatory';
     public static COMPANY = 'Company';
     public static COMPANY_REQUIRED = 'The Company field is mandatory';
+    public static DELETE_EMPLOYEE_MESSAGE = 'Are you sure you want to delete this Employee?';
+    public static DELETE_EMPLOYEE_TITLE = 'Delete Employee';
     public static EDIT_EMPLOYEE_TITLE = 'Edit Employee';
     public static EMAIL = 'Email';
     public static EMAIL_REQIRED = 'The Email field is mandatory';
@@ -25,7 +27,7 @@ export class Constants{
 
     // Product
     public static ADD_PRODUCT_TITLE = 'Add Product';
-    public static DELETE_PRODUCT_MESSAGE = 'Are you sure you want to delete this product?';
+    public static DELETE_PRODUCT_MESSAGE = 'Are you sure you want to delete this Product?';
     public static DELETE_PRODUCT_TITLE = 'Delete Product';
     public static DISCARD_CHANGES = 'Do you want to discard the changes?';
     public static EDIT_PRODUCT_TITLE = 'Edit Product';
