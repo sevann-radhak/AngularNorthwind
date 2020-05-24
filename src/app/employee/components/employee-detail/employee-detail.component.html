@@ -1,6 +1,6 @@
 <div class="margin-bottom">
     <div>
-        <span mat-dialog-title class="modal-title" align="center">{{employee.first_name}} {{employee.last_name}}</span>
+        <span mat-dialog-title class="modal-title" align="center">{{employee.firstName}} {{employee.lastName}}</span>
     </div>
 
     <mat-divider></mat-divider>
@@ -10,28 +10,21 @@
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-3 col-form-label bold">{{FIRST_NAME}}</label>
                 <div class="col-sm-9">
-                    <label for="staticEmail" class="form-control-plaintext">{{employee.first_name}}</label>
+                    <label for="staticEmail" class="form-control-plaintext">{{employee.firstName}}</label>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-3 col-form-label bold">{{LAST_NAME}}</label>
                 <div class="col-sm-9">
-                    <label for="staticEmail" class="form-control-plaintext">{{employee.last_name}}</label>
+                    <label for="staticEmail" class="form-control-plaintext">{{employee.lastName}}</label>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-3 col-form-label bold">{{EMAIL}}</label>
                 <div class="col-sm-9">
-                    <label for="staticEmail" class="form-control-plaintext">{{employee.email_address}}</label>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-3 col-form-label bold">{{PHONE_NUMBER}}</label>
-                <div class="col-sm-9">
-                    <label for="staticEmail" class="form-control-plaintext">{{employee.mobile_phone}}</label>
+                    <label for="staticEmail" class="form-control-plaintext">{{employee.emailAddress}}</label>
                 </div>
             </div>
 
@@ -39,6 +32,13 @@
                 <label for="staticEmail" class="col-sm-3 col-form-label bold">{{ADDRESS}}</label>
                 <div class="col-sm-9">
                     <label for="staticEmail" class="form-control-plaintext">{{employee.address}}</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-3 col-form-label bold">{{PHONE_NUMBER}}</label>
+                <div class="col-sm-9">
+                    <label for="staticEmail" class="form-control-plaintext">{{employee.mobilePhone}}</label>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-3 col-form-label bold">{{JOB_TITLE}}</label>
                 <div class="col-sm-9">
-                    <label for="staticEmail" class="form-control-plaintext">{{employee.job_title}}</label>
+                    <label for="staticEmail" class="form-control-plaintext">{{employee.jobTitle}}</label>
                 </div>
             </div>
         </form>

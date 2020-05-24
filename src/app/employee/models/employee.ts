@@ -1,16 +1,15 @@
-/* tslint:disable */
 export class Employee {
     address: string;
-    bussiness_phone: string;
+    bussinessPhone: string;
     company: string;
-    email_address: string;
-    fax_number: string;
-    first_name: string;
-    home_phone: string;
+    emailAddress: string;
+    faxNumber: string;
+    firstName: string;
+    homePhone: string;
     id: number;
-    job_title: string;
-    last_name: string;
-    mobile_phone: string;
+    jobTitle: string;
+    lastName: string;
+    mobilePhone: string;
     /**
      *
      */

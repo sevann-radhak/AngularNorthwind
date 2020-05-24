@@ -1,0 +1,71 @@
+<div class="edit-employee-container">
+    <div align="center">
+        <span class="modal-title">{{title}}</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <div class="controls">
+                <div class="first-name-container mt-4">
+                    <mat-form-field class="first-name">
+                        <input matInput placeholder="{{FIRST_NAME}}" formControlName="firstName" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('firstName').touched && employeeForm.get('firstName').hasError('required')">{{FIRST_NAME_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="last-name-container mt-4">
+                    <mat-form-field class="last-name">
+                        <input matInput placeholder="{{LAST_NAME}}" formControlName="lastName" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('lastName').touched && employeeForm.get('lastName').hasError('required')">{{LAST_NAME_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="email-address-container mt-4">
+                    <mat-form-field class="email-address">
+                        <input matInput placeholder="{{EMAIL}}" formControlName="emailAddress" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('emailAddress').touched && employeeForm.get('emailAddress').hasError('required')">{{EMAIL_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="address-container mt-4">
+                    <mat-form-field class="address">
+                        <input matInput placeholder="{{ADDRESS}}" formControlName="address" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('address').touched && employeeForm.get('address').hasError('required')">{{ADDRESS_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="mobile-phone-container mt-4">
+                    <mat-form-field class="mobilePhone">
+                        <input matInput placeholder="{{PHONE_NUMBER}}" formControlName="mobilePhone" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="company-container mt-4">
+                    <mat-form-field class="company">
+                        <input matInput placeholder="{{COMPANY}}" formControlName="company" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('company').touched && employeeForm.get('company').hasError('required')">{{COMPANY_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="job-title-container mt-4">
+                    <mat-form-field class="job-title">
+                        <input matInput placeholder="{{JOB_TITLE}}" formControlName="jobTitle" />
+                        <mat-error class="x-small-letter" *ngIf="employeeForm.get('jobTitle').touched && employeeForm.get('jobTitle').hasError('required')">{{JOB_TITLE_REQUIRED}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div>
+                <div class="button-container">
+                    <button mat-raised-button color="warn" class="expand" mat-dialog-close>{{CANCEL}}</button>
+                    <button mat-raised-button color="primary" class="expand" type="submit" [disabled]="!employeeForm.valid">{{submitButtonText}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

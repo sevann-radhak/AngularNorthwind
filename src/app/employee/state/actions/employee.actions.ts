@@ -82,7 +82,9 @@ export class LoadEmployeesComplete implements Action {
 export class UpdateEmployee implements Action {
     readonly type = EmployeeActionTypes.UpdateEmployee;
 
-    constructor(public request: Employee) { }
+    constructor(public request: Employee) {
+        console.log(request);
+     }
 }
 
 export class UpdateEmployeeComplete implements Action {

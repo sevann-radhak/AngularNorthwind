@@ -9,6 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 import { ofType } from '@ngrx/effects';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeDetailContainerComponent } from '../employee-detail-container/employee-detail-container.component';
+import { EmployeeEditContainerComponent } from '../employee-edit-container/employee-edit-container.component';
 
 @Component({
   selector: 'app-employee-main-container',
@@ -54,8 +55,6 @@ export class EmployeeMainContainerComponent implements OnInit {
   }
 
   onDetail(event: any): void {
-    console.log(event);
-
     const dialogRef = this.dialog.open(EmployeeDetailContainerComponent,
       {
         panelClass: 'employee-modal-dialog',
@@ -65,8 +64,15 @@ export class EmployeeMainContainerComponent implements OnInit {
     dialogRef.afterClosed().subscribe(_ => this.refreshData(this.pageSize, this.offset));
   }
 
-  onEdit($event) {
+  onEdit(event) {
+    const dialogRef = this.dialog.open(EmployeeEditContainerComponent, {
+      width: '100%',
+      data: { employeeId: event.id }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.refreshData(this.pageSize, this.offset);
+    });
   }
 
   refreshData(pageSize, offset): void {

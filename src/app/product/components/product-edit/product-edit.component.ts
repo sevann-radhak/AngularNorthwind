@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-product-edit',
@@ -11,13 +10,12 @@ export class ProductEditComponent implements OnInit, OnChanges {
 
   @Input()
   product: Product;
-
   @Output()
   edit: EventEmitter<Product> = new EventEmitter<Product>();
 
   productToSend: Product;
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.product && changes.product.currentValue) {
@@ -25,11 +23,11 @@ export class ProductEditComponent implements OnInit, OnChanges {
     }
   }
 
-  productToSendFunction(): void {
-    this.productToSend = this.product;
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
+  productToSendFunction(): void {
+    this.productToSend = this.product;
   }
 
   onEdit(product: Product): void {

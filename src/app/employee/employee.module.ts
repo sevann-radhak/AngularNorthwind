@@ -11,9 +11,19 @@ import { EmployeeEffects } from './state/effects/employee.effects';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailContainerComponent } from './containers/employee-detail-container/employee-detail-container.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeeEditContainerComponent } from './containers/employee-edit-container/employee-edit-container.component';
+import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 
 @NgModule({
-  declarations: [EmployeeMainContainerComponent, EmployeeListComponent, EmployeeDetailContainerComponent, EmployeeDetailComponent],
+  declarations: [
+    EmployeeMainContainerComponent,
+    EmployeeListComponent,
+    EmployeeDetailContainerComponent,
+    EmployeeDetailComponent,
+    EmployeeEditContainerComponent,
+    EmployeeEditComponent,
+    EmployeeFormComponent],
   imports: [
     CommonModule,
     EffectsModule.forFeature([EmployeeEffects]),

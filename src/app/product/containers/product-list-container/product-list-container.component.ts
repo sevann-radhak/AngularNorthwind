@@ -34,8 +34,8 @@ export class ProductListContainerComponent implements OnInit {
   protected ngUnsubscribe: Subject<any> = new Subject<any>();
 
   offset = 0;
-  pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 50];
+  pageSize = this.pageSizeOptions[0];
   request: GetProduct;
 
   ngOnInit(): void {

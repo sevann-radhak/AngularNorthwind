@@ -1,0 +1,60 @@
+.edit-employee-container {
+    .controls {
+        display: flex;
+    }
+    .company-container {
+        flex: 1;
+        .company {
+            width: 100%;
+        }
+    }
+    .address-container {
+        flex: 1;
+        .address {
+            width: 100%;
+        }
+    }
+    .email-address-container {
+        flex: 1;
+        .email-address {
+            width: 100%;
+        }
+    }
+    .first-name-container {
+        flex: 1;
+        .first-name {
+            width: 100%;
+        }
+    }
+    .job-title-container {
+        flex: 1;
+        margin-left: 1em;
+        .job-title {
+            width: 100%;
+        }
+    }
+    .last-name-container {
+        flex: 1;
+        margin-left: 1em;
+        .last-name {
+            width: 100%;
+        }
+    }
+    .mobile-phone-container {
+        flex: 1;
+        margin-left: 1em;
+        .mobile-phone {
+            width: 100%;
+        }
+    }
+}
+
+.button-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    .expand {
+        width: 100%;
+        margin: 3em;
+    }
+}

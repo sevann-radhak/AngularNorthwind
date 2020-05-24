@@ -17,7 +17,7 @@ export class EmployeeEffects {
         ofType<EmployeeActions.AddEmployee>(EmployeeActions.EmployeeActionTypes.AddEmployee),
         switchMap(action => this.employeeService.addEmployee(action.request)
             .pipe(map(data => {
-                this.router.navigate(['/employees/list']);
+                // this.router.navigate(['/employees/list']);
                 return new EmployeeActions.AddEmployeeComplete(data);
             }))
         )
@@ -60,7 +60,7 @@ export class EmployeeEffects {
         ofType<EmployeeActions.UpdateEmployee>(EmployeeActions.EmployeeActionTypes.UpdateEmployee),
         switchMap(action => this.employeeService.updateEmployee(action.request)
             .pipe(map(data => {
-                this.router.navigate(['/employees/list']);
+                // this.router.navigate(['/employees/list']);
                 return new EmployeeActions.UpdateEmployeeComplete(data);
             }))
         )

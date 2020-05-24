@@ -62,6 +62,8 @@ export function EmployeeReducer(state = initialState, action: EmployeeActions.Ac
         case EmployeeActions.EmployeeActionTypes.UpdateEmployee:
             return state;
         case EmployeeActions.EmployeeActionTypes.UpdateEmployeeComplete:
+            console.log(action.payload);
+            
             return {
                 ...state,
                 employee: action.payload

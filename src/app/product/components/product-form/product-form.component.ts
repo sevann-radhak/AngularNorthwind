@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChange
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { KeyValue } from '@angular/common';
 import { Product } from '../../models/product';
+import { Constants } from './../../../constants/constans';
 
 @Component({
   selector: 'app-product-form',
@@ -21,22 +22,20 @@ export class ProductFormComponent implements OnInit, OnChanges {
   @Output()
   submitForm: EventEmitter<Product> = new EventEmitter<Product>();
 
-  constructor(
-    private fb: FormBuilder) {
-  }
-
-  ngOnInit(): void {
-    this.submitButtonText = 'Create';
-    this.title = 'Add Product';
-    this.buildProductForm();
-  }
+  constructor(private fb: FormBuilder) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.productEdit && changes.productEdit.currentValue) {
-      this.submitButtonText = 'Save';
-      this.title = 'Edit Product';
+      this.submitButtonText = Constants.SUBMIT_BUTTON_SAVE;
+      this.title = Constants.EDIT_PRODUCT_TITLE;
       this.buildProductEditForm();
     }
+  }
+
+  ngOnInit(): void {
+    this.submitButtonText = Constants.SUBMIT_BUTTON_CREATE;
+    this.title = Constants.ADD_PRODUCT_TITLE;
+    this.buildProductForm();
   }
 
   buildCategories(): any {
