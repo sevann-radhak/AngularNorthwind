@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
 import { EmployeeModule } from './employee/employee.module';
+import { OrderModule } from './order/order.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EmployeeModule } from './employee/employee.module';
     StoreModule.forRoot({}, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
+    OrderModule,
     ProductModule,
     SharedModule,
     HomeModule,
@@ -37,3 +39,4 @@ import { EmployeeModule } from './employee/employee.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
