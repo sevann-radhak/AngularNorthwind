@@ -14,6 +14,7 @@ import { Constants } from '../../../constants/constans';
 import { EmployeeNewContainerComponent } from '../employee-new-container/employee-new-container.component';
 import { ConfirmData } from '../../../shared/models/confirm-data';
 import { ConfirmService } from '../../../shared/services/confirm.service';
+import { BestEmployee } from '../../models/best-employee';
 
 @Component({
   selector: 'app-employee-main-container',
@@ -31,6 +32,7 @@ export class EmployeeMainContainerComponent implements OnInit {
     private dialog: MatDialog,
     private store: Store<fromEmployeeReducer.EmployeeState>) { }
 
+  bestEmployee$: Observable<BestEmployee> = this.store.select(fromEmployeeReducer.getBestEmployee);
   employees$: Observable<Employee[]> = this.store.select(fromEmployeeReducer.getEmployees);
   length$: Observable<number> = this.store.select(fromEmployeeReducer.getTotalRecords);
   protected ngUnsubscribe: Subject<any> = new Subject<any>();
@@ -106,6 +108,6 @@ export class EmployeeMainContainerComponent implements OnInit {
   refreshData(pageSize, offset): void {
     this.request = new GetEmployees(pageSize, offset);
     this.store.dispatch(new EmployeeActions.LoadEmployees(this.request));
+    this.store.dispatch(new EmployeeActions.GetBestEmployee());
   }
-
 }

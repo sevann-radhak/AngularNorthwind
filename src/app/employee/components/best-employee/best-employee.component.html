@@ -1,0 +1,25 @@
+<div class="mat-acordion">
+    <mat-accordion multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{BEST_EMPLOYEE}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{bestEmployee.firstName}} {{bestEmployee.lastName}}
+                    <mat-icon>account_circle</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="employee-details">
+                <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="Employee photo"> -->
+                    {{EMAIL}}: {{bestEmployee.emailAddress}}
+                </div>
+                <div>
+                    {{TOTAL_SALES}}: {{bestEmployee.totalSales}}
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

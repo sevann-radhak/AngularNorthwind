@@ -15,6 +15,7 @@ import { EmployeeEditContainerComponent } from './containers/employee-edit-conta
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { EmployeeNewContainerComponent } from './containers/employee-new-container/employee-new-container.component';
+import { BestEmployeeComponent } from './components/best-employee/best-employee.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EmployeeNewContainerComponent } from './containers/employee-new-contain
     EmployeeEditContainerComponent,
     EmployeeEditComponent,
     EmployeeFormComponent,
-    EmployeeNewContainerComponent],
+    EmployeeNewContainerComponent,
+    BestEmployeeComponent],
   imports: [
     CommonModule,
     EffectsModule.forFeature([EmployeeEffects]),

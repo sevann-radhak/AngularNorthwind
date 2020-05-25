@@ -1,0 +1,19 @@
+.employee-header-info-container {
+    display: flex;
+}
+
+.add-button-container {
+    flex: 1;
+    margin-left: 1em;
+    .add-button {
+        margin-top: 0.4em;
+        width: 100%;
+    }
+}
+
+.best-employee-container {
+    flex: 4;
+    .add-button {
+        width: 100%;
+    }
+}

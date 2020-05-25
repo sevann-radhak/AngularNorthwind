@@ -4,7 +4,7 @@ export class BestEmployee {
     public firstName: string;
     public id: number;
     public lastName: string;
-    public totalSellings: string;
+    public totalSales: string;
 
     constructor() { }
 }

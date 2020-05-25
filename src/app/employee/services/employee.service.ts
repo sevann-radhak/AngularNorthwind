@@ -23,7 +23,7 @@ export class EmployeeService {
   }
 
   getBestEmployee(): Observable<BestEmployee> {
-    return this.httpClient.get<BestEmployee>(`${environment.ApiUrl}products/bestselling`);
+    return this.httpClient.get<BestEmployee>(`${environment.ApiUrl}employees/best-seller`);
   }
 
   getEmployeeById(request: number): Observable<Employee> {

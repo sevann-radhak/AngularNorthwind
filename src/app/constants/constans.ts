@@ -1,5 +1,4 @@
-export class Constants{
-
+export class Constants {
     public static ACCEPT = 'Accept';
     public static CANCEL = 'Cancel';
     public static SUBMIT_BUTTON_CREATE = 'Create';
@@ -9,6 +8,7 @@ export class Constants{
     public static ADD_EMPLOYEE_TITLE = 'Add Employee';
     public static ADDRESS = 'Address';
     public static ADDRESS_REQUIRED = 'The Address field is mandatory';
+    public static BEST_EMPLOYEE = 'The best Employee';
     public static COMPANY = 'Company';
     public static COMPANY_REQUIRED = 'The Company field is mandatory';
     public static DELETE_EMPLOYEE_MESSAGE = 'Are you sure you want to delete this Employee?';
@@ -23,6 +23,7 @@ export class Constants{
     public static LAST_NAME = 'Last Name';
     public static LAST_NAME_REQUIRED = 'The Last Name field is mandatory';
     public static PHONE_NUMBER = 'Phone Number';
+    public static TOTAL_SALES = 'Total sales';
 
 
     // Product
@@ -31,4 +32,5 @@ export class Constants{
     public static DELETE_PRODUCT_TITLE = 'Delete Product';
     public static DISCARD_CHANGES = 'Do you want to discard the changes?';
     public static EDIT_PRODUCT_TITLE = 'Edit Product';
+
 }

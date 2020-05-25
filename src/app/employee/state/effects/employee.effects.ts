@@ -35,7 +35,7 @@ export class EmployeeEffects {
     getBestEmployee$ = this.actions$.pipe(
         ofType<EmployeeActions.GetBestEmployee>(EmployeeActions.EmployeeActionTypes.GetBestEmployee),
         switchMap(action => this.employeeService.getBestEmployee()
-            .pipe(map(data => new EmployeeActions.GetBestEmployee()))
+            .pipe(map(data => new EmployeeActions.GetBestEmployeeComplete(data)))
         )
     );
 

@@ -1,7 +1,13 @@
 <div>
-    <div class="add-button-container">
-        <button mat-raised-button color="primary" class="add-button" (click)="onAdd()">{{addEmploye}}</button>
+    <div class="employee-header-info-container">
+        <div class="best-employee-container">
+            <app-best-employee class="best-employee" [bestEmployee]="bestEmployee$ | async"></app-best-employee>
+        </div>
+        <div class="add-button-container">
+            <button mat-raised-button color="primary" class="add-button" (click)="onAdd()">{{addEmploye}}</button>
+        </div>
     </div>
+
     <div>
         <app-employee-list [employees]="employees$ | async" (edit)="onEdit($event)" (delete)="onDelete($event)" (detail)="onDetail($event)"></app-employee-list>
         <div>

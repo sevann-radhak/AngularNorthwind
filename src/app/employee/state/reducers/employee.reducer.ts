@@ -26,20 +26,20 @@ export function EmployeeReducer(state = initialState, action: EmployeeActions.Ac
                 employee: action.payload
             };
 
-        case EmployeeActions.EmployeeActionTypes.GetBestEmployee:
-            return state;
-        case EmployeeActions.EmployeeActionTypes.GetBestEmployeeComplete:
-            return {
-                ...state,
-                bestEmployee: action.payload
-            };
-
         case EmployeeActions.EmployeeActionTypes.DeleteEmployeeById:
             return state;
         case EmployeeActions.EmployeeActionTypes.DeleteEmployeeByIdComplete:
             return {
                 ...state,
                 employee: action.payload
+            };
+
+        case EmployeeActions.EmployeeActionTypes.GetBestEmployee:
+            return state;
+        case EmployeeActions.EmployeeActionTypes.GetBestEmployeeComplete:
+            return {
+                ...state,
+                bestEmployee: action.payload
             };
 
         case EmployeeActions.EmployeeActionTypes.GetEmployeeById:
@@ -63,7 +63,7 @@ export function EmployeeReducer(state = initialState, action: EmployeeActions.Ac
             return state;
         case EmployeeActions.EmployeeActionTypes.UpdateEmployeeComplete:
             console.log(action.payload);
-            
+
             return {
                 ...state,
                 employee: action.payload

@@ -40,8 +40,8 @@ export class EmployeeFormComponent implements OnInit, OnChanges {
     if (changes.employeeEdit && changes.employeeEdit.currentValue) {
       this.submitButtonText = Constants.SUBMIT_BUTTON_SAVE;
       this.title = `${Constants.EDIT_EMPLOYEE_TITLE}
-        ${changes.employeeEdit.currentValue.first_name}
-        ${changes.employeeEdit.currentValue.last_name}`;
+        ${changes.employeeEdit.currentValue.firstName}
+        ${changes.employeeEdit.currentValue.lastName}`;
       this.buildEmployeeEditForm();
     }
   }
@@ -54,7 +54,7 @@ export class EmployeeFormComponent implements OnInit, OnChanges {
 
   buildEmployeeEditForm(): void {
     console.log(this.employeeEdit);
-    
+
     this.employeeForm = this.fb.group({
       id: [this.employeeEdit.id],
       address: [this.employeeEdit.address, [Validators.required]],
