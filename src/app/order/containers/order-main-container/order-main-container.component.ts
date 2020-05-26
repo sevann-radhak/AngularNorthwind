@@ -16,17 +16,29 @@ export class OrderMainContainerComponent implements OnInit {
   length$: Observable<number> = this.store.select(fromReducer.getTotalRecords);
   orders$: Observable<OrderListItem[]> = this.store.select(fromReducer.getOrders);
 
+  columns: object[] = [];
   request: GetOrders;
   constructor(private store: Store<fromReducer.OrderState>) { }
 
   ngOnInit(): void {
     this.refreshData();
+    this.columns = this.getColumns();
+  }
+
+  getColumns(): object[] {
+    return [
+      { name: 'Id', prop: 'id' },
+      { name: 'Date', prop: 'orderDate' },
+      { name: 'Customer', prop: 'customer' },
+      { name: 'Phone', prop: 'phone' },
+      { name: 'Address', prop: 'address' },
+      { name: 'City', prop: 'city' },
+    ]
   }
 
   refreshData(): void {
     this.request = new GetOrders(10, 0);
     this.store.dispatch(new orderActions.LoadOrders(this.request));
-
   }
 
 }

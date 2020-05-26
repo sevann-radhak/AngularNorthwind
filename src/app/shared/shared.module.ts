@@ -8,14 +8,17 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ConfirmService } from './services/confirm.service';
 import { DecimalOnlyDirective } from './directives/decimal-only.directive';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
-  declarations: [ConfirmComponent, DecimalOnlyDirective, NavBarComponent],
+  declarations: [ConfirmComponent, DecimalOnlyDirective, NavBarComponent, TableViewComponent],
   imports: [
     CommonModule,
     FormsModule,
     HighchartsChartModule,
     MaterialModule,
+    NgxDatatableModule,
     ReactiveFormsModule,
     RouterModule
   ],
@@ -26,7 +29,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HighchartsChartModule,
     MaterialModule,
     NavBarComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableViewComponent
   ],
   entryComponents: [ConfirmComponent],
   providers: [ConfirmService]

@@ -1,6 +1,7 @@
 export class Constants {
     public static ACCEPT = 'Accept';
     public static CANCEL = 'Cancel';
+    public static NO_ITEMS = 'There are no items to show';
     public static SUBMIT_BUTTON_CREATE = 'Create';
     public static SUBMIT_BUTTON_SAVE = 'Save';
 
